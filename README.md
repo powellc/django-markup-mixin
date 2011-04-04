@@ -17,7 +17,8 @@ In three easy steps!
 
 3. Make sure your model inherits the mixin: 
 
-        class YourMode(MarkupMixin): ...`   
+        class YourModel(MarkupMixin): 
+            ...
 
 4. Set the markup field options on your model:
         
@@ -30,7 +31,7 @@ That's it. One major caveat, because of the hacky nature of this project, **you 
 Usage
 ------
 
-With the steps above taken, managing trashed items is fairly straightforward:
+With the steps above taken, managing your marked up items is fairly straightforward:
 
     >>> obj = YourModel.objects.get(pk=1)
     >>> obj.content
