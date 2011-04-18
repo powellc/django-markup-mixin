@@ -38,7 +38,7 @@ class MarkupBase(models.base.ModelBase):
         parents = [b for b in bases if isinstance(b, MarkupBase)]
         if not parents:
             return
-        ''' Parse MarkupOptions and store them as under _markup on the object. '''
+        ''' Parse MarkupOptions and store them under _markup on the object. '''
         user_opts = getattr(cls, 'MarkupOptions', None)
         opts = MarkupOptions(user_opts)
         setattr(cls, '_markup', opts)
@@ -46,8 +46,7 @@ class MarkupBase(models.base.ModelBase):
 class MarkupMixin(models.Model):
     markup = models.CharField(max_length=1, choices=MARKUP_OPTIONS, default=MARKUP_DEFAULT, help_text=MARKUP_HELP)
 
-    __metaclass__= MarkupBase
-
+    __metaclass__  = MarkupBase
     class Meta:
         abstract=True
 
