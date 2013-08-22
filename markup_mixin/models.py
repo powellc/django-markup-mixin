@@ -1,5 +1,5 @@
 import logging
-import settings
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.markup.templatetags import markup
